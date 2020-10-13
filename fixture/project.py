@@ -16,10 +16,10 @@ class ProjectHelper:
         self.return_to_home_page()
 
 
-    def del_project(self, name):
+    def del_project(self, project_name):
         wd = self.app.wd
         self.open_manage_projects_page()
-        self.select_project_by_name(name)
+        self.select_project_by_name(project_name)
         wd.find_element_by_xpath("//input[@value='Delete Project']").click()
         wd.find_element_by_xpath("//input[@value='Delete Project']").click()
         self.return_to_home_page()
@@ -50,9 +50,9 @@ class ProjectHelper:
             wd.find_element_by_name(field_name).send_keys(text)
 
 
-    def select_project_by_name(self, name):
+    def select_project_by_name(self, project_name):
         wd = self.app.wd
-        wd.find_element_by_link_text(name).click()
+        wd.find_element_by_link_text(project_name).click()
 
 
     def get_projacts_list(self):
