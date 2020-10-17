@@ -39,7 +39,7 @@ class ProjectHelper:
     def fill_project_form(self, project):
         wd = self.app.wd
         self.change_project_field_value("name", project.project_name)
-        self.change_project_field_value("description", project.project_description)
+        #self.change_project_field_value("description", project.project_description)
 
 
     def change_project_field_value(self, field_name, text):
