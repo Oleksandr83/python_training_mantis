@@ -9,7 +9,7 @@ class SoapHelper:
         self.app = app
 
     def can_login(self, username, password):
-        client = Client("http://localhost/mantisbt/api/soap/mantisconnect.php?wsdl")
+        client = Client("http://localhost/mantisbt/") #http://localhost/mantisbt/api/soap/mantisconnect.php?wsdl
         try:
             client.service.mc_login(username, password)
             return True
@@ -18,7 +18,7 @@ class SoapHelper:
 
     def load_projects_list(self, username, password):
         project_list = []
-        client = Client("http://localhost/mantisbt/api/soap/mantisconnect.php?wsdl")
+        client = Client("http://localhost/mantisbt/")
         for row in client.service.mc_projects_get_user_accessible(username, password):
             #print(row)
             name = row[1]
